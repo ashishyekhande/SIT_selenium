@@ -1,14 +1,17 @@
 package operations;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 import java.util.Scanner;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import com.google.common.io.Files;
 
 public class links_tabel {
 
@@ -50,17 +53,27 @@ public class links_tabel {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
 		links_tabel tb = new links_tabel();
 		tb.initialize();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("tell me product name");
-		String prod = sc.nextLine(); // Google Pixel 8 Pro
+		//String prod = sc.nextLine(); // Google Pixel 8 Pro
+		tb.listall("Google Pixel 8 Pro");
+		tb.takescreenshot();
+		
 
-		tb.listall(prod);
+	}
 
+	public void takescreenshot() throws Exception {
+		// TODO Auto-generated method stub
+		TakesScreenshot screenshot = (TakesScreenshot )w;
+		File src = screenshot.getScreenshotAs(OutputType.FILE);
+		File dest = new File("./Screenshot/basket.png");
+		Files.copy(src, dest);
+		
 	}
 
 }
