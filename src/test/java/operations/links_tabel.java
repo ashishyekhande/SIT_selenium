@@ -53,6 +53,50 @@ public class links_tabel {
 
 	}
 
+	public void frame() {
+		// TODO Auto-generated method stub
+		w.get("https://rahulshettyacademy.com/AutomationPractice/");
+		WebElement frame1 = w.findElement(By.id("courses-iframe"));
+		w.switchTo().frame(frame1);
+		System.out.println(w.getTitle());
+		List<WebElement> iframe_element = w.findElements(By.xpath("//ul[@class='navigation clearfix']/li/a"));
+
+		for (WebElement ele : iframe_element) {
+			String menu = ele.getText();
+			System.out.println(menu);
+		}
+		System.out.println("list over");
+		w.switchTo().frame(0);
+		System.out.println(w.getTitle());
+
+	}
+
+	public void takescreenshot() throws Exception {
+		// TODO Auto-generated method stub
+		TakesScreenshot screenshot = (TakesScreenshot) w;
+		File src = screenshot.getScreenshotAs(OutputType.FILE);
+		File dest = new File("./Screenshot/basket.png");
+		Files.copy(src, dest);
+
+	}
+
+	public void handletabel() {
+
+		// Print price written against the specific course
+		w.get("https://rahulshettyacademy.com/AutomationPractice/");
+		List<WebElement> cousList = w.findElements(By.xpath("//table[@id='product'][1]/tbody/tr/td[2]"));
+
+		for (WebElement ele : cousList) {
+			String courseName = ele.getText();
+			if (courseName.equalsIgnoreCase("WebServices / REST API Testing with SoapUI")) {
+				String price = ele.findElement(By.xpath("following-sibling::td")).getText();
+				System.out.println("Price of cource is " + price);
+				break;
+			}
+		}
+
+	}
+
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 
@@ -60,20 +104,12 @@ public class links_tabel {
 		tb.initialize();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("tell me product name");
-		//String prod = sc.nextLine(); // Google Pixel 8 Pro
-		tb.listall("Google Pixel 8 Pro");
-		tb.takescreenshot();
-		
+		// String prod = sc.nextLine(); // Google Pixel 8 Pro
+		// tb.listall("Google Pixel 8 Pro");
+		// tb.takescreenshot();
+		// tb.frame();
+		tb.handletabel();
 
-	}
-
-	public void takescreenshot() throws Exception {
-		// TODO Auto-generated method stub
-		TakesScreenshot screenshot = (TakesScreenshot )w;
-		File src = screenshot.getScreenshotAs(OutputType.FILE);
-		File dest = new File("./Screenshot/basket.png");
-		Files.copy(src, dest);
-		
 	}
 
 }
