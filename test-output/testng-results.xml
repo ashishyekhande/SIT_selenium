@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-25T20:54:58 IST" name="Suite" finished-at="2025-06-25T20:55:08 IST" duration-ms="10540">
+    <groups>
+    </groups>
+    <test started-at="2025-06-25T20:54:58 IST" name="Test" finished-at="2025-06-25T20:55:08 IST" duration-ms="10540">
+      <class name="GridTest.gridclass1">
+        <test-method signature="gridtest1()[pri:0, instance:GridTest.gridclass1@5b1669c0]" started-at="2025-06-25T20:54:58 IST" name="gridtest1" finished-at="2025-06-25T20:55:03 IST" duration-ms="5074" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gridtest1 -->
+      </class> <!-- GridTest.gridclass1 -->
+      <class name="GridTest.gridclass2">
+        <test-method signature="gridtest2()[pri:0, instance:GridTest.gridclass2@1530c739]" started-at="2025-06-25T20:54:58 IST" name="gridtest2" finished-at="2025-06-25T20:55:04 IST" duration-ms="5592" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gridtest2 -->
+      </class> <!-- GridTest.gridclass2 -->
+      <class name="GridTest.gridclass3">
+        <test-method signature="gridtest1()[pri:0, instance:GridTest.gridclass3@3646a422]" started-at="2025-06-25T20:54:58 IST" name="gridtest1" finished-at="2025-06-25T20:55:08 IST" duration-ms="10498" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gridtest1 -->
+      </class> <!-- GridTest.gridclass3 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
